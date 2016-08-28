@@ -20,7 +20,11 @@ defmodule Rivnefish.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Rivnefish do
-  #   pipe_through :api
-  # end
+  scope "/api", Rivnefish do
+    pipe_through :api
+
+    scope "/v1" do
+      resources "/places", Api.V1.PlaceController, only: [:index, :show]
+    end
+  end
 end

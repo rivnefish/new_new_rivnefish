@@ -5,6 +5,10 @@ defmodule Rivnefish.Api.V1.FishView do
     render_many(fish, Rivnefish.Api.V1.FishView, "fish.json")
   end
 
+  def render("show.json", %{fish: fish}) do
+    render_one(fish, Rivnefish.Api.V1.FishView, "fish.json")
+  end
+
   def render("fish.json", %{fish: fish}) do
     %{id: fish.id,
       name: fish.name,
@@ -30,9 +34,5 @@ defmodule Rivnefish.Api.V1.FishView do
 
   def s3_url(path) do
     Application.get_env(:rivnefish, Rivnefish.Endpoint)[:s3_base_url] <> "/" <> path
-  end
-
-  def render("show.json", %{fish: fish}) do
-    render_one(fish, Rivnefish.Api.V1.PlaceView, "fish.json")
   end
 end

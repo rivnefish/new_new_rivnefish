@@ -25,6 +25,7 @@ defmodule Rivnefish.Router do
 
     scope "/v1" do
       resources "/places", Api.V1.PlaceController, only: [:index, :show]
+      resources "/fish", Api.V1.FishController, only: [:index, :show]
     end
   end
 end

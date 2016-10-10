@@ -10,10 +10,11 @@ defmodule Rivnefish.Fish do
     field :predator,           :boolean
     field :redbook,            :boolean
     field :description,        :string
+    field :icon_data,          :map
 
-    has_many :place_fish, PlaceFish
+    has_many :place_fishes, PlaceFish
 
-    timestamps()
+    timestamps(inserted_at: :created_at)
   end
 
   @doc """

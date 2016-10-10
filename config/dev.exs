@@ -38,6 +38,6 @@ config :rivnefish, Rivnefish.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "dev",
   password: "123654",
-  database: "rivnefish_dev",
+  database: "fishmap_dev",
   hostname: "localhost",
   pool_size: 10

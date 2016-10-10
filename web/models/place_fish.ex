@@ -1,7 +1,7 @@
 defmodule Rivnefish.PlaceFish do
   use Rivnefish.Web,        :model
 
-  schema "place_fish" do
+  schema "place_fishes" do
     field :weight_avg,  :integer
     field :weight_max,  :integer
     field :amount,      :integer
@@ -9,8 +9,6 @@ defmodule Rivnefish.PlaceFish do
 
     belongs_to :place, Place
     belongs_to :fish, Fish
-
-    timestamps()
   end
 
   @doc """

@@ -6,9 +6,9 @@ defmodule Rivnefish.Place do
     field :slug,            :string
     field :lat,             :decimal, precision: 15, scale: 10
     field :lng,             :decimal, precision: 15, scale: 10
-    field :area,            :integer
-    field :depth_avg,       :integer
-    field :depth_max,       :integer
+    field :area,            :decimal, precision: 8,  scale: 2
+    field :depth_avg,       :decimal, precision: 5,  scale: 2
+    field :depth_max,       :decimal, precision: 5,  scale: 2
     field :permit,          :integer, default: 0, null: false
     field :time_to_fish,    :integer, default: 0, null: false
     field :price_24h,       :decimal
@@ -26,9 +26,9 @@ defmodule Rivnefish.Place do
     field :rating_votes,    :integer
     field :external_id,     :string
 
-    has_many :place_fish, PlaceFish
+    has_many :place_fishes, PlaceFish
 
-    timestamps()
+    timestamps(inserted_at: :created_at)
   end
 
   @doc """

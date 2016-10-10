@@ -15,7 +15,8 @@ config :rivnefish, Rivnefish.Endpoint,
   secret_key_base: "T/3G7eCuNMmH7zg0IUJGOoJB1s9UduhJ/lpVpZNfCSiF+x/mz6AJchrN6N7ZIeV1",
   render_errors: [view: Rivnefish.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Rivnefish.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  s3_base_url: "https://rivnefish-photos.s3.eu-central-1.amazonaws.com"
 
 # Configures Elixir's Logger
 config :logger, :console,
